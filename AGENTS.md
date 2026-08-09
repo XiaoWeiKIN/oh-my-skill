@@ -24,7 +24,7 @@ For `llm-wiki-maintainer`, run:
 
 ```bash
 python3 -m py_compile skills/llm-wiki-maintainer/scripts/*.py scripts/sync_skill.py
-python3 -m unittest discover -s skills/llm-wiki-maintainer/tests -v
+python3 -m unittest discover -s tests/llm-wiki-maintainer -v
 ```
 
 Also run the current Codex `skill-creator` `quick_validate.py` against the changed skill directory.
