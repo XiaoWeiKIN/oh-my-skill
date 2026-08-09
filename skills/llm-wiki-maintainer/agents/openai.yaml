@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Wiki Maintainer"
+  short_description: "Compile and maintain a persistent Obsidian knowledge wiki"
+  default_prompt: "Use $llm-wiki-maintainer to ingest this source into my Obsidian LLM Wiki with provenance and validation."
