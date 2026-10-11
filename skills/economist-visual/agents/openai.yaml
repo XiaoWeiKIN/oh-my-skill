@@ -1,0 +1,4 @@
+interface:
+  display_name: "Economist 风格视觉"
+  short_description: "中文提示词驱动的经济学人风格编辑插画与科普生图"
+  default_prompt: "使用 $economist-visual 把这个主题生成一张《经济学人》风格的原创中文科普图，自动选择合适图型，直接生图并检查文字与事实准确性。"
