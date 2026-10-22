@@ -1,0 +1,4 @@
+interface:
+  display_name: "磁盘检查与清理"
+  short_description: "检查 macOS 大目录，按授权清理缓存与旧环境，保留指定数据并核验释放空间"
+  default_prompt: "使用 $macos-disk-cleanup 检查磁盘占用，列出可清理项，继续保留我之前指定不动的数据。"
