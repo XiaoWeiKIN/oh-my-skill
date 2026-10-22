@@ -34,7 +34,8 @@ python3 <skill目录>/scripts/inventory.py "$HOME/Library/Caches" "$HOME/Downloa
 ## 分类核实
 
 - 容器、Docker.raw、Podman、Minikube：读 [references/containers.md](references/containers.md)。
-- 开发产物、应用数据、临时文件、日志、Codex 会话：读 [references/files.md](references/files.md)。
+- 开发产物、应用数据、临时文件、普通日志：读 [references/files.md](references/files.md)。
+- Codex 日志、缓存、更新包、会话和 worktree：读 [references/codex.md](references/codex.md)。
 - 用元数据定位，避免输出配置密钥、环境变量、聊天内容；识别进程时只展示必要的 PID、工作目录、服务或程序名。
 
 ## 执行已授权清理

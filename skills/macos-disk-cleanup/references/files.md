@@ -32,8 +32,6 @@ Chromium 等目录中的 `.code_sign_clone` 可能共享 APFS 块。不要把其
 - 仍在写的普通日志，在已授权清理日志的范围内可原地截断，保留 inode；实现时用不跟随链接的打开方式，核验普通文件再 ftruncate。不要误删 `.pid` 或把数据库 WAL 当普通日志。
 - 用户要求“关闭”后核验具体 PID 对应服务，再正常终止并确认退出；不按宽泛关键词杀进程。若由 supervisor 重启，识别对应启动项后再在授权范围内处理。
 
-## Codex 会话
+## Codex
 
-区分本地归档 transcript、活动会话、UI 元数据、worktree 和插件缓存。优先查看当前可用的应用管理接口。
-
-用户授权删除归档会话时，不能推导为清空 `.codex` 或活动 sessions。若只能删除 `archived_sessions` 中已确认的本地记录，明确说明这只是本地内容删除，不能声称 UI／云端会话已永久删除；不直接修改 SQLite 来绕过缺失的产品能力。
+Codex 日志、缓存、更新包、归档会话和 worktree 的专项检查与清理见 [codex.md](codex.md)。不要把整个 Codex 数据目录当作缓存。
