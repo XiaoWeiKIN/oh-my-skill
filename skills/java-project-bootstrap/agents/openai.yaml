@@ -1,0 +1,4 @@
+interface:
+  display_name: "Java Project Bootstrap"
+  short_description: "Bootstrap Java libraries from pinned OTel build conventions"
+  default_prompt: "Use $java-project-bootstrap to initialize a Java library from the pinned OpenTelemetry Java engineering baseline and report the checks actually executed."
