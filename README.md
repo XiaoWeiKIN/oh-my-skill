@@ -8,6 +8,8 @@
 
 | Skill | 用途 |
 | --- | --- |
+| [`doc-writing`](skills/doc-writing/SKILL.md) | 撰写有明确主张的中文技术文档、方案、报告和提案。 |
+| [`markdown-translation-cn`](skills/markdown-translation-cn/SKILL.md) | 将 Markdown 全文翻译为简体中文，保留结构、链接与媒体，并在自检后按规则处理原文。 |
 | [`llm-wiki-maintainer`](skills/llm-wiki-maintainer/SKILL.md) | 将 Obsidian vault 维护为可持续编译、可追溯、可巡检的 LLM Wiki。 |
 | [`economist-visual`](skills/economist-visual/SKILL.md) | 使用中文提示词生成 Economist-inspired 原创编辑插画、封面感图片、科技和经济科普解释图。需要运行环境提供生图能力。 |
 | [`macos-disk-cleanup`](skills/macos-disk-cleanup/SKILL.md) | 排查 macOS 磁盘占用，按授权清理缓存和旧环境，保留指定数据并核验实际释放空间。 |
