@@ -1,0 +1,59 @@
+name: Java project bootstrap
+on:
+  pull_request:
+    paths:
+      - 'skills/java-project-bootstrap/**'
+      - '.github/workflows/java-project-bootstrap.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/java-project-bootstrap/**'
+      - '.github/workflows/java-project-bootstrap.yml'
+permissions:
+  contents: read
+jobs:
+  generator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Check Node runtime and unit tests
+        working-directory: skills/java-project-bootstrap
+        run: |
+          node --version
+          node --test tests/*.test.mjs
+  generated-gradle:
+    needs: generator
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ['8', '21']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Real-source initialization and positive/negative Gradle controls
+        working-directory: skills/java-project-bootstrap
+        env:
+          TARGET_JAVA: ${{ matrix.target }}
+        run: node tests/gradle-smoke.mjs
+      - name: Upload actual verification report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: bootstrap-gradle-${{ matrix.target }}
+          path: skills/java-project-bootstrap/bootstrap-gradle-*.json
+          if-no-files-found: warn

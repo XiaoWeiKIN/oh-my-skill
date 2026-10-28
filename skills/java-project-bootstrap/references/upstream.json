@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "repository": "open-telemetry/opentelemetry-java",
+  "commit": "d97e4af88cc2e29d1dfe00b126ab31f7a2a7cf73",
+  "tree": "bfab38c9f9997c9bc70c4435c1f55f2e5ccf7388",
+  "sourceDate": "2026-10-22",
+  "templateVersion": "0.1.0",
+  "buildJava": 25,
+  "gradle": "9.8.1",
+  "distributionSha256": "dce76f55f8e251a3a1f130eb120f30b3d271de2b76c9b0729d316b5a1b6dc01f",
+  "directories": ["buildSrc/", "buildscripts/", "custom-checks/", "animal-sniffer-signature/"],
+  "files": [
+    "LICENSE", ".editorconfig", ".gitattributes", "gradlew", "gradlew.bat",
+    "gradle/wrapper/gradle-wrapper.jar", "gradle/wrapper/gradle-wrapper.properties",
+    "dependencyManagement/build.gradle.kts", "all/build.gradle.kts",
+    "testing-internal/src/main/java/io/opentelemetry/internal/testing/slf4j/JulBridgeInitializer.java"
+  ],
+  "optionalFiles": ["NOTICE", "buildSrc/settings.gradle.kts"]
+}

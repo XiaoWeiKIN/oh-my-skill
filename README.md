@@ -13,6 +13,7 @@
 | [`llm-wiki-maintainer`](skills/llm-wiki-maintainer/SKILL.md) | 将 Obsidian vault 维护为可持续编译、可追溯、可巡检的 LLM Wiki。 |
 | [`economist-visual`](skills/economist-visual/SKILL.md) | 使用中文提示词生成 Economist-inspired 原创编辑插画、封面感图片、科技和经济科普解释图。需要运行环境提供生图能力。 |
 | [`macos-disk-cleanup`](skills/macos-disk-cleanup/SKILL.md) | 排查 macOS 磁盘占用，按授权清理缓存和旧环境，保留指定数据并核验实际释放空间。 |
+| [`java-project-bootstrap`](skills/java-project-bootstrap/SKILL.md) | 用 Node.js 初始化基于固定 OTel Java 工程基线的 Gradle 多模块 Library，保留构建约定、BOM、质量与兼容性检查，并提供校验和差异比较。 |
 
 ## 一句话安装
 
@@ -66,6 +67,12 @@
 > 使用 economist-visual，生成一张《经济学人》风格的中文科普图，解释为什么 AI 推理成本下降可能导致算力需求增长。直接生成图片，不要虚构统计数据。
 
 Skill 负责指导设计和生图流程，**不负责为 Claude Code、Cursor 等 Agent 自动提供图像生成模型**；运行环境必须已有相应的生图工具，否则 Agent 应说明限制。
+
+初始化 Java Library 时，可使用：
+
+> 使用 java-project-bootstrap，以 OTel Java 工程基线初始化 example-sdk，group 为 com.example.sdk，目标 Java 21，输出到一个不存在的新目录。生成后执行可用的检查，分别报告结构检查和 Gradle 构建结果。
+
+该 Skill 需要 Node.js 22+；所固定工程基线使用 JDK 25 构建，消费端目标 Java 可单独选择。首次使用需要访问 GitHub；预热完整缓存后可离线生成。生成不等于构建验证，也不会自动发布制品。
 
 ## 使用前须知
 
