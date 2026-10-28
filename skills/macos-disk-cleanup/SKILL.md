@@ -13,6 +13,7 @@ description: 排查 macOS 磁盘空间、大目录及可回收占用，按用户
 
 - “检查／再挖掘”只扫描并提出候选；“这几项／前四项都清理”承接最近明确的候选列表，已有授权不重复询问。
 - “之前保留的继续不动”持续有效。新的宽泛清理请求不自动撤销保留项；排除保留路径及其包含的数据，避免删除其父目录。
+- 用户引用某个候选或注释“清理”，只授权该项；“都清理”承接最近具体清单，不连带更早待定项。一次已完成的清理不自动授权删除以后新生成的数据，重新排查时重新列为候选。
 - 若缺失被引用的清单，先找回会话上下文；仍无法确定时询问具体项目，不猜测删除范围。
 - 缓存清理不等于删除聊天记录、媒体、项目数据库、源码或本地模型。停止应用、重启机器、移除虚拟机须在授权范围内。
 
@@ -34,7 +35,7 @@ python3 <skill目录>/scripts/inventory.py "$HOME/Library/Caches" "$HOME/Downloa
 ## 分类核实
 
 - 容器、Docker.raw、Podman、Minikube：读 [references/containers.md](references/containers.md)。
-- 开发产物、应用数据、临时文件、普通日志：读 [references/files.md](references/files.md)。
+- Go 编译缓存、IDE 缓存、CLI 旧版本、更新包、开发产物和日志：读 [references/files.md](references/files.md)。
 - Codex 日志、缓存、更新包、会话和 worktree：读 [references/codex.md](references/codex.md)。
 - 用元数据定位，避免输出配置密钥、环境变量、聊天内容；识别进程时只展示必要的 PID、工作目录、服务或程序名。
 
