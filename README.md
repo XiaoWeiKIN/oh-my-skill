@@ -14,6 +14,7 @@
 | [`economist-visual`](skills/economist-visual/SKILL.md) | 使用中文提示词生成 Economist-inspired 原创编辑插画、封面感图片、科技和经济科普解释图。需要运行环境提供生图能力。 |
 | [`macos-disk-cleanup`](skills/macos-disk-cleanup/SKILL.md) | 排查 macOS 磁盘占用，按授权清理缓存和旧环境，保留指定数据并核验实际释放空间。 |
 | [`java-project-bootstrap`](skills/java-project-bootstrap/SKILL.md) | 用 Node.js 初始化基于固定 OTel Java 工程基线的 Gradle 多模块 Library，保留构建约定、BOM、质量与兼容性检查，并提供校验和差异比较。 |
+| [`exemplar-driven-learning`](skills/exemplar-driven-learning/SKILL.md) | 通过少数具有不同设计路线的标杆案例，围绕问题研究约束、机制和权衡，沉淀可迁移原则并设计最小验证实践。 |
 
 ## 一句话安装
 
@@ -73,6 +74,12 @@ Skill 负责指导设计和生图流程，**不负责为 Claude Code、Cursor �
 > 使用 java-project-bootstrap，以 OTel Java 工程基线初始化 example-sdk，group 为 com.example.sdk，目标 Java 21，输出到一个不存在的新目录。生成后执行可用的检查，分别报告结构检查和 Gradle 构建结果。
 
 该 Skill 需要 Node.js 22+；所固定工程基线使用 JDK 25 构建，消费端目标 Java 可单独选择。首次使用需要访问 GitHub；预热完整缓存后可离线生成。生成不等于构建验证，也不会自动发布制品。
+
+学习大型 Go 工程或可观测性产品时，可使用：
+
+> 使用 exemplar-driven-learning，围绕“高并发查询如何排队、拆分与隔离”，选择 VictoriaMetrics、Mimir/Cortex 等有代表性的案例。先说明各自适用条件，再对比机制和权衡，最后给出能在我的系统中验证的最小实验。
+
+该 Skill 是研究工作流，不保证预先缓存最新资料；具体结论应以当次核验的一手资料和代码版本为依据。
 
 ## 使用前须知
 
